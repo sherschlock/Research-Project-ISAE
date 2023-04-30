@@ -1,0 +1,41 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In member function ‘[01m[Kvoid MyPlanner::octomapCallback(const ConstPtr&)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:18:118:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kdynamic_pointer_cast<octomap::OcTree>(octomap::AbstractOcTree*)[m[K’
+   18 |     std::shared_ptr<octomap::OcTree> octree = std::dynamic_pointer_cast<octomap::OcTree>(octomap_msgs::msgToMap(*msg)[01;31m[K)[m[K;
+      |                                                                                                                      [01;31m[K^[m[K
+In file included from [01m[K/usr/include/c++/9/bits/shared_ptr.h:52[m[K,
+                 from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:1[m[K:
+[01m[K/usr/include/c++/9/bits/shared_ptr_base.h:1558:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Tp1, __gnu_cxx::_Lock_policy _Lp> std::__shared_ptr<_Tp1, _Lp> std::dynamic_pointer_cast(const std::__shared_ptr<_Tp2, _Lp>&)[m[K’
+ 1558 |     [01;36m[Kdynamic_pointer_cast[m[K(const __shared_ptr<_Tp1, _Lp>& __r) noexcept
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr_base.h:1558:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:18:118:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::__shared_ptr<_Tp2, _Lp>[m[K’ and ‘[01m[Koctomap::AbstractOcTree*[m[K’
+   18 |     std::shared_ptr<octomap::OcTree> octree = std::dynamic_pointer_cast<octomap::OcTree>(octomap_msgs::msgToMap(*msg)[01;36m[K)[m[K;
+      |                                                                                                                      [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:1[m[K:
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:507:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Up> std::shared_ptr<_Tp> std::dynamic_pointer_cast(const std::shared_ptr<_Tp>&)[m[K’
+  507 |     [01;36m[Kdynamic_pointer_cast[m[K(const shared_ptr<_Up>& __r) noexcept
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:507:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:18:118:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::shared_ptr<_Tp>[m[K’ and ‘[01m[Koctomap::AbstractOcTree*[m[K’
+   18 |     std::shared_ptr<octomap::OcTree> octree = std::dynamic_pointer_cast<octomap::OcTree>(octomap_msgs::msgToMap(*msg)[01;36m[K)[m[K;
+      |                                                                                                                      [01;36m[K^[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:27:12:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[Kclass std::shared_ptr<octomap::OcTree>[m[K’ argument given to ‘[01m[Kdelete[m[K’, expected pointer
+   27 |     delete [01;31m[Koctree[m[K;
+      |            [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/Astar_caller.dir/build.make:76: CMakeFiles/Astar_caller.dir/code/Astar_caller.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2807: CMakeFiles/Astar_caller.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

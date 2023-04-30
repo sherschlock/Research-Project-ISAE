@@ -1,0 +1,14 @@
+(cl:in-package mrs_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          POSITION_ERRORS-VAL
+          POSITION_ERRORS
+          TOTAL_POSITION_ERROR-VAL
+          TOTAL_POSITION_ERROR
+          YAW_ERROR-VAL
+          YAW_ERROR
+          POSITION_ELAND_THRESHOLD-VAL
+          POSITION_ELAND_THRESHOLD
+          POSITION_FAILSAFE_THRESHOLD-VAL
+          POSITION_FAILSAFE_THRESHOLD
+))

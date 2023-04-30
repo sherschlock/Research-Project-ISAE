@@ -1,0 +1,42 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::stateCost(const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:115:58:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  115 |   ob::Cost stateCost(const ob::State *s) const override {[01;35m[K}[m[K
+      |                                                          [01;35m[K^[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kvoid plan()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:188:29:[m[K [01;31m[Kerror: [m[Kexpected type-specifier
+  188 |  ob::PlannerPtr planner(new [01;31m[Kog[m[K::RRTconnect(si));
+      |                             [01;31m[K^~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:191:18:[m[K [01;31m[Kerror: [m[K‘[01m[KRRTconnect[m[K’ is not a member of ‘[01m[Kog[m[K’; did you mean ‘[01m[KRRTConnect[m[K’?
+  191 |  planner->as<og::[01;31m[KRRTconnect[m[K>()->setRange(3.0);
+      |                  [01;31m[K^~~~~~~~~~[m[K
+      |                  [32m[KRRTConnect[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:191:18:[m[K [01;31m[Kerror: [m[K‘[01m[KRRTconnect[m[K’ is not a member of ‘[01m[Kog[m[K’; did you mean ‘[01m[KRRTConnect[m[K’?
+  191 |  planner->as<og::[01;31m[KRRTconnect[m[K>()->setRange(3.0);
+      |                  [01;31m[K^~~~~~~~~~[m[K
+      |                  [32m[KRRTConnect[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:191:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kompl::base::Planner::as<<expression error> >()[m[K’
+  191 |  planner->as<og::RRTconnect>([01;31m[K)[m[K->setRange(3.0);
+      |                              [01;31m[K^[m[K
+In file included from [01m[K/usr/include/ompl/geometric/planners/PlannerIncludes.h:40[m[K,
+                 from [01m[K/usr/include/ompl/geometric/planners/rrt/RRTConnect.h:41[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:31[m[K:
+[01m[K/usr/include/ompl/base/Planner.h:238:16:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> T* ompl::base::Planner::as()[m[K’
+  238 |             T *[01;36m[Kas[m[K()
+      |                [01;36m[K^~[m[K
+[01m[K/usr/include/ompl/base/Planner.h:238:16:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:191:30:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  191 |  planner->as<og::RRTconnect>([01;31m[K)[m[K->setRange(3.0);
+      |                              [01;31m[K^[m[K
+In file included from [01m[K/usr/include/ompl/geometric/planners/PlannerIncludes.h:40[m[K,
+                 from [01m[K/usr/include/ompl/geometric/planners/rrt/RRTConnect.h:41[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:31[m[K:
+[01m[K/usr/include/ompl/base/Planner.h:248:22:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> const T* ompl::base::Planner::as() const[m[K’
+  248 |             const T *[01;36m[Kas[m[K() const
+      |                      [01;36m[K^~[m[K
+[01m[K/usr/include/ompl/base/Planner.h:248:22:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:191:30:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  191 |  planner->as<og::RRTconnect>([01;31m[K)[m[K->setRange(3.0);
+      |                              [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1618: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

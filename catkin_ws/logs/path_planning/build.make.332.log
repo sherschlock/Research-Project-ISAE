@@ -1,0 +1,8 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o[0m
+[ 75%] Built target Astar_caller
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::stateCost(const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:128:58:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  128 |   ob::Cost stateCost(const ob::State* s) const override {[01;35m[K}[m[K
+      |                                                          [01;35m[K^[m[K
+[100%] [32m[1mLinking CXX executable /home/akash/catkin_ws/devel/.private/path_planning/lib/path_planning/path_planning_node[0m
+[100%] Built target path_planning_node

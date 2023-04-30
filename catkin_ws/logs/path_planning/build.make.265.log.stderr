@@ -1,0 +1,45 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::motionCost(const ompl::base::State*, const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:157:69:[m[K [01;31m[Kerror: [m[Kconversion from ‘[01m[Kdouble[m[K’ to non-scalar type ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} requested
+  157 |    std_msgs::Float64MultiArray cost = [01;31m[Ksi_->distance(state1, state2) * factor[m[K;
+      |                                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:159:24:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kompl::base::Cost::Cost(std_msgs::Float64MultiArray&)[m[K’
+  159 |    return ob::Cost(cost[01;31m[K)[m[K;
+      |                        [01;31m[K^[m[K
+In file included from [01m[K/usr/include/ompl/base/OptimizationObjective.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:29[m[K:
+[01m[K/usr/include/ompl/base/Cost.h:51:22:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::Cost::Cost(double)[m[K’
+   51 |             explicit [01;36m[KCost[m[K(double v = 0.0) : v_(v)
+      |                      [01;36m[K^~~~[m[K
+[01m[K/usr/include/ompl/base/Cost.h:51:34:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} to ‘[01m[Kdouble[m[K’
+   51 |             explicit Cost([01;36m[Kdouble v = 0.0[m[K) : v_(v)
+      |                           [01;36m[K~~~~~~~^~~~~~~[m[K
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr ompl::base::Cost::Cost(const ompl::base::Cost&)[m[K’
+   47 |         class [01;36m[KCost[m[K
+      |               [01;36m[K^~~~[m[K
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} to ‘[01m[Kconst ompl::base::Cost&[m[K’
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr ompl::base::Cost::Cost(ompl::base::Cost&&)[m[K’
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} to ‘[01m[Kompl::base::Cost&&[m[K’
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost MechanicalWorkObjective::motionCost(const ompl::base::State*, const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:196:58:[m[K [01;31m[Kerror: [m[Kconversion from ‘[01m[Kdouble[m[K’ to non-scalar type ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} requested
+  196 |   std_msgs::Float64MultiArray cost = [01;31m[KpositiveCostAccrued + 0.00001 * si_->distance(s1, s2)[m[K;
+      |                                      [01;31m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:198:23:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kompl::base::Cost::Cost(std_msgs::Float64MultiArray&)[m[K’
+  198 |   return ob::Cost(cost[01;31m[K)[m[K;
+      |                       [01;31m[K^[m[K
+In file included from [01m[K/usr/include/ompl/base/OptimizationObjective.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:29[m[K:
+[01m[K/usr/include/ompl/base/Cost.h:51:22:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::Cost::Cost(double)[m[K’
+   51 |             explicit [01;36m[KCost[m[K(double v = 0.0) : v_(v)
+      |                      [01;36m[K^~~~[m[K
+[01m[K/usr/include/ompl/base/Cost.h:51:34:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} to ‘[01m[Kdouble[m[K’
+   51 |             explicit Cost([01;36m[Kdouble v = 0.0[m[K) : v_(v)
+      |                           [01;36m[K~~~~~~~^~~~~~~[m[K
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr ompl::base::Cost::Cost(const ompl::base::Cost&)[m[K’
+   47 |         class [01;36m[KCost[m[K
+      |               [01;36m[K^~~~[m[K
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} to ‘[01m[Kconst ompl::base::Cost&[m[K’
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr ompl::base::Cost::Cost(ompl::base::Cost&&)[m[K’
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::Float64MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::Float64MultiArray_<std::allocator<void> >[m[K’} to ‘[01m[Kompl::base::Cost&&[m[K’
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2781: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

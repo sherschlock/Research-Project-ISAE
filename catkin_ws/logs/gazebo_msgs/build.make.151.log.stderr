@@ -1,0 +1,45 @@
+Fatal Python error: init_import_size: Failed to import the site module
+Fatal Python error: init_import_size: Python runtime state: Failed to import the site module
+initializedPython runtime state: initialized
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site.py", line 597, in <module>
+  File "/usr/lib/python3.8/site.py", line 597, in <module>
+make[2]: *** [CMakeFiles/_gazebo_msgs_generate_messages_check_deps_DeleteModel.dir/build.make:70: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_DeleteModel] Interrupt
+make[2]: *** wait: No child processes.  Stop.
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** wait: No child processes.  Stop.
+make[1]: *** [CMakeFiles/Makefile2:1329: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_DeleteModel.dir/all] Interrupt
+make[1]: *** [CMakeFiles/Makefile2:1381: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_GetLinkState.dir/all] Error 2
+    main()
+    main()
+  File "/usr/lib/python3.8/site.py", line 584, in main
+  File "/usr/lib/python3.8/site.py", line 584, in main
+    known_paths = addsitepackages(known_paths)
+    known_paths = addsitepackages(known_paths)
+  File "/usr/lib/python3.8/site.py", line 367, in addsitepackages
+  File "/usr/lib/python3.8/site.py", line 367, in addsitepackages
+    addsitedir(sitedir, known_paths)
+    addsitedir(sitedir, known_paths)
+  File "/usr/lib/python3.8/site.py", line 214, in addsitedir
+  File "/usr/lib/python3.8/site.py", line 214, in addsitedir
+    addpackage(sitedir, name, known_paths)
+    addpackage(sitedir, name, known_paths)
+  File "/usr/lib/python3.8/site.py", line 175, in addpackage
+  File "/usr/lib/python3.8/site.py", line 175, in addpackage
+    exec(line)
+    exec(line)
+  File "<string>", line 1, in <module>
+  File "<string>", line 1, in <module>
+KeyboardInterrupt
+KeyboardInterrupt
+make[2]: *** [CMakeFiles/_gazebo_msgs_generate_messages_check_deps_SetJointProperties.dir/build.make:85: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_SetJointProperties.dir/depend] Interrupt
+make[2]: *** [CMakeFiles/_gazebo_msgs_generate_messages_check_deps_GetPhysicsProperties.dir/build.make:70: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_GetPhysicsProperties] Interrupt
+make[1]: *** [CMakeFiles/Makefile2:1432: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_SetJointProperties.dir/all] Interrupt
+make[1]: *** [CMakeFiles/Makefile2:1407: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_GetPhysicsProperties.dir/all] Interrupt
+make[2]: *** [CMakeFiles/_gazebo_msgs_generate_messages_check_deps_ApplyBodyWrench.dir/build.make:70: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_ApplyBodyWrench] Error 1
+make[2]: *** [CMakeFiles/_gazebo_msgs_generate_messages_check_deps_DeleteLight.dir/build.make:70: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_DeleteLight] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1303: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_ApplyBodyWrench.dir/all] Interrupt
+make[1]: *** [CMakeFiles/Makefile2:1355: CMakeFiles/_gazebo_msgs_generate_messages_check_deps_DeleteLight.dir/all] Interrupt
+make: *** [Makefile:146: all] Interrupt

@@ -1,0 +1,1 @@
+/home/akash/catkin_ws/devel/.private/gazebo_msgs/share/roseus/ros/gazebo_msgs/msg/ContactState.l

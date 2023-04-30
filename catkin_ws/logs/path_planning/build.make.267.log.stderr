@@ -1,0 +1,50 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::motionCost(const ompl::base::State*, const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:158:14:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat64[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[KFloat32[m[K’?
+  158 |    std_msgs::[01;31m[KFloat64[m[K cost;
+      |              [01;31m[K^~~~~~~[m[K
+      |              [32m[KFloat32[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:159:4:[m[K [01;31m[Kerror: [m[K‘[01m[Kcost[m[K’ was not declared in this scope; did you mean ‘[01m[Kcosq[m[K’?
+  159 |    [01;31m[Kcost[m[K.data = si_->distance(state1, state2) * factor;
+      |    [01;31m[K^~~~[m[K
+      |    [32m[Kcosq[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost MechanicalWorkObjective::motionCost(const ompl::base::State*, const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:198:13:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat64[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[KFloat32[m[K’?
+  198 |   std_msgs::[01;31m[KFloat64[m[K cost;
+      |             [01;31m[K^~~~~~~[m[K
+      |             [32m[KFloat32[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:199:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kcost[m[K’ was not declared in this scope; did you mean ‘[01m[Kcosq[m[K’?
+  199 |   [01;31m[Kcost[m[K.data = positiveCostAccrued + 0.00001 * si_->distance(s1, s2);
+      |   [01;31m[K^~~~[m[K
+      |   [32m[Kcosq[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/serialization.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/publisher.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/node_handle.h:32[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:16[m[K:
+/opt/ros/noetic/include/ros/message_traits.h: In instantiation of ‘[01m[Kstatic const char* ros::message_traits::MD5Sum<M>::value() [with M = double][m[K’:
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:227:102:[m[K   required from ‘[01m[Kconst char* ros::message_traits::md5sum() [with M = double][m[K’
+[01m[K/opt/ros/noetic/include/ros/advertise_options.h:92:39:[m[K   required from ‘[01m[Kvoid ros::AdvertiseOptions::init(const string&, uint32_t, const SubscriberStatusCallback&, const SubscriberStatusCallback&) [with M = double; std::string = std::__cxx11::basic_string<char>; uint32_t = unsigned int; ros::SubscriberStatusCallback = boost::function<void(const ros::SingleSubscriberPublisher&)>][m[K’
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:252:7:[m[K   required from ‘[01m[Kros::Publisher ros::NodeHandle::advertise(const string&, uint32_t, bool) [with M = double; std::string = std::__cxx11::basic_string<char>; uint32_t = unsigned int][m[K’
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:479:50:[m[K   required from here
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:120:28:[m[K [01;31m[Kerror: [m[K‘[01m[K__s_getMD5Sum[m[K’ is not a member of ‘[01m[Kdouble[m[K’
+  120 |     return [01;31m[KM::__s_getMD5Sum()[m[K.c_str();
+      |            [01;31m[K~~~~~~~~~~~~~~~~^~[m[K
+/opt/ros/noetic/include/ros/message_traits.h: In instantiation of ‘[01m[Kstatic const char* ros::message_traits::DataType<M>::value() [with M = double][m[K’:
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:236:104:[m[K   required from ‘[01m[Kconst char* ros::message_traits::datatype() [with M = double][m[K’
+[01m[K/opt/ros/noetic/include/ros/advertise_options.h:93:43:[m[K   required from ‘[01m[Kvoid ros::AdvertiseOptions::init(const string&, uint32_t, const SubscriberStatusCallback&, const SubscriberStatusCallback&) [with M = double; std::string = std::__cxx11::basic_string<char>; uint32_t = unsigned int; ros::SubscriberStatusCallback = boost::function<void(const ros::SingleSubscriberPublisher&)>][m[K’
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:252:7:[m[K   required from ‘[01m[Kros::Publisher ros::NodeHandle::advertise(const string&, uint32_t, bool) [with M = double; std::string = std::__cxx11::basic_string<char>; uint32_t = unsigned int][m[K’
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:479:50:[m[K   required from here
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:137:30:[m[K [01;31m[Kerror: [m[K‘[01m[K__s_getDataType[m[K’ is not a member of ‘[01m[Kdouble[m[K’
+  137 |     return [01;31m[KM::__s_getDataType()[m[K.c_str();
+      |            [01;31m[K~~~~~~~~~~~~~~~~~~^~[m[K
+/opt/ros/noetic/include/ros/message_traits.h: In instantiation of ‘[01m[Kstatic const char* ros::message_traits::Definition<M>::value() [with M = double][m[K’:
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:245:106:[m[K   required from ‘[01m[Kconst char* ros::message_traits::definition() [with M = double][m[K’
+[01m[K/opt/ros/noetic/include/ros/advertise_options.h:94:55:[m[K   required from ‘[01m[Kvoid ros::AdvertiseOptions::init(const string&, uint32_t, const SubscriberStatusCallback&, const SubscriberStatusCallback&) [with M = double; std::string = std::__cxx11::basic_string<char>; uint32_t = unsigned int; ros::SubscriberStatusCallback = boost::function<void(const ros::SingleSubscriberPublisher&)>][m[K’
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:252:7:[m[K   required from ‘[01m[Kros::Publisher ros::NodeHandle::advertise(const string&, uint32_t, bool) [with M = double; std::string = std::__cxx11::basic_string<char>; uint32_t = unsigned int][m[K’
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:479:50:[m[K   required from here
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:154:39:[m[K [01;31m[Kerror: [m[K‘[01m[K__s_getMessageDefinition[m[K’ is not a member of ‘[01m[Kdouble[m[K’
+  154 |     return [01;31m[KM::__s_getMessageDefinition()[m[K.c_str();
+      |            [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2781: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

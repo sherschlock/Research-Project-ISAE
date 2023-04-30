@@ -1,0 +1,93 @@
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:[m[K In member function ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool> pathfinder::AstarPlanner::findPath(const point3d&, const point3d&, std::shared_ptr<octomap::OcTree>, double)[m[K’:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:146:50:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Koctomap::OcTree::keyToCoord(octomath::Vector3&)[m[K’
+  146 |   auto planning_start = tree.keyToCoord(map_start[01;31m[K)[m[K;
+      |                                                  [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.h:573[m[K,
+                 from [01m[K/opt/ros/noetic/include/octomap/OccupancyOcTreeBase.h:44[m[K,
+                 from [01m[K/opt/ros/noetic/include/octomap/OcTree.h:38[m[K,
+                 from [01m[K/opt/ros/noetic/include/octomap/octomap.h:37[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:9[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:1[m[K:
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.hxx:394:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kdouble octomap::OcTreeBaseImpl<NODE, INTERFACE>::keyToCoord(octomap::key_type, unsigned int) const [with NODE = octomap::OcTreeNode; INTERFACE = octomap::AbstractOccupancyOcTree; octomap::key_type = short unsigned int][m[K’
+  394 |   double [01;36m[KOcTreeBaseImpl<NODE,I>[m[K::keyToCoord(key_type key, unsigned depth) const{
+      |          [01;36m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.hxx:394:10:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+In file included from [01m[K/opt/ros/noetic/include/octomap/OccupancyOcTreeBase.h:44[m[K,
+                 from [01m[K/opt/ros/noetic/include/octomap/OcTree.h:38[m[K,
+                 from [01m[K/opt/ros/noetic/include/octomap/octomap.h:37[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:9[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:1[m[K:
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.h:484:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kdouble octomap::OcTreeBaseImpl<NODE, INTERFACE>::keyToCoord(octomap::key_type) const [with NODE = octomap::OcTreeNode; INTERFACE = octomap::AbstractOccupancyOcTree; octomap::key_type = short unsigned int][m[K’
+  484 |     inline double [01;36m[KkeyToCoord[m[K(key_type key) const{
+      |                   [01;36m[K^~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.h:484:39:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Koctomath::Vector3[m[K’ to ‘[01m[Koctomap::key_type[m[K’ {aka ‘[01m[Kshort unsigned int[m[K’}
+  484 |     inline double keyToCoord([01;36m[Kkey_type key[m[K) const{
+      |                              [01;36m[K~~~~~~~~~^~~[m[K
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.h:490:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koctomap::point3d octomap::OcTreeBaseImpl<NODE, INTERFACE>::keyToCoord(const octomap::OcTreeKey&) const [with NODE = octomap::OcTreeNode; INTERFACE = octomap::AbstractOccupancyOcTree; octomap::point3d = octomath::Vector3][m[K’
+  490 |     inline point3d [01;36m[KkeyToCoord[m[K(const OcTreeKey& key) const{
+      |                    [01;36m[K^~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.h:490:48:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Koctomath::Vector3[m[K’ to ‘[01m[Kconst octomap::OcTreeKey&[m[K’
+  490 |     inline point3d keyToCoord([01;36m[Kconst OcTreeKey& key[m[K) const{
+      |                               [01;36m[K~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.h:496:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koctomap::point3d octomap::OcTreeBaseImpl<NODE, INTERFACE>::keyToCoord(const octomap::OcTreeKey&, unsigned int) const [with NODE = octomap::OcTreeNode; INTERFACE = octomap::AbstractOccupancyOcTree; octomap::point3d = octomath::Vector3][m[K’
+  496 |     inline point3d [01;36m[KkeyToCoord[m[K(const OcTreeKey& key, unsigned depth) const{
+      |                    [01;36m[K^~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/octomap/OcTreeBaseImpl.h:496:20:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:159:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kopen[m[K’ was not declared in this scope; did you mean ‘[01m[Kpopen[m[K’?
+  159 |     visualizeExpansions([01;31m[Kopen[m[K, closed, tree);
+      |                         [01;31m[K^~~~[m[K
+      |                         [32m[Kpopen[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:159:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosed[m[K’ was not declared in this scope; did you mean ‘[01m[Kclose[m[K’?
+  159 |     visualizeExpansions(open, [01;31m[Kclosed[m[K, tree);
+      |                               [01;31m[K^~~~~~[m[K
+      |                               [32m[Kclose[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:172:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kstart[m[K’ was not declared in this scope; did you mean ‘[01m[Kros::start[m[K’?
+  172 |   first.key        = [01;31m[Kstart[m[K;
+      |                      [01;31m[K^~~~~[m[K
+      |                      [32m[Kros::start[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/node_handle.h:47[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_lib/include/mrs_lib/batch_visualizer.h:10[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:13[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:1[m[K:
+[01m[K/opt/ros/noetic/include/ros/init.h:184:18:[m[K [01;36m[Knote: [m[K‘[01m[Kros::start[m[K’ declared here
+  184 | ROSCPP_DECL void [01;36m[Kstart[m[K();
+      |                  [01;36m[K^~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:176:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kopen_heap[m[K’ was not declared in this scope
+  176 |   [01;31m[Kopen_heap[m[K.push(first);
+      |   [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:177:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kopen[m[K’ was not declared in this scope; did you mean ‘[01m[Kpopen[m[K’?
+  177 |   [01;31m[Kopen[m[K.insert(first);
+      |   [01;31m[K^~~~[m[K
+      |   [32m[Kpopen[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:193:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosed[m[K’ was not declared in this scope; did you mean ‘[01m[Kclose[m[K’?
+  193 |     [01;31m[Kclosed[m[K.insert(current);
+      |     [01;31m[K^~~~~~[m[K
+      |     [32m[Kclose[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:204:100:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  204 |       auto path_keys = backtrackPathKeys(best_node == first ? best_node_greedy : best_node, first, [01;31m[Kparent_map[m[K);
+      |                                                                                                    [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:223:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  223 |       auto path_keys = backtrackPathKeys(current, first, [01;31m[Kparent_map[m[K);
+      |                                                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:234:64:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{<expression error>, original_goal}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool>[m[K’
+  234 |       return {prepareOutputPath(path_keys, tree), original_goal[01;31m[K}[m[K;
+      |                                                                [01;31m[K^[m[K
+      |                                                                [01;31m[K|[m[K
+      |                                                                [01;31m[K<brace-enclosed initializer list>[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:277:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  277 |         [01;31m[Kparent_map[m[K[n] = current;
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:286:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosed[m[K’ was not declared in this scope; did you mean ‘[01m[Kclose[m[K’?
+  286 |   visualizeExpansions(open, [01;31m[Kclosed[m[K, tree);
+      |                             [01;31m[K^~~~~~[m[K
+      |                             [32m[Kclose[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:291:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  291 |     auto path_keys = backtrackPathKeys(best_node, first, [01;31m[Kparent_map[m[K);
+      |                                                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:300:65:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  300 |     auto path_keys = backtrackPathKeys(best_node_greedy, first, [01;31m[Kparent_map[m[K);
+      |                                                                 [01;31m[K^~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/MrsAstarPlanner.dir/build.make:76: CMakeFiles/MrsAstarPlanner.dir/src/astar_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2873: CMakeFiles/MrsAstarPlanner.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

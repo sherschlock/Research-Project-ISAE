@@ -1,0 +1,3 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node[0m
+[100%] Built target path_planning_node

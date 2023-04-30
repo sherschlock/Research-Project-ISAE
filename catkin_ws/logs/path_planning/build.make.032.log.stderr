@@ -1,0 +1,112 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kvoid plan()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:233:49:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Kobj[m[K’ to be of abstract type ‘[01m[KEnergyObjective<ompl::base::OptimizationObjective, 5, 2>[m[K’
+  233 |  EnergyObjective<ob::OptimizationObjective,5,2> [01;31m[Kobj[m[K(si);
+      |                                                 [01;31m[K^~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:135:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KEnergyObjective<ompl::base::OptimizationObjective, 5, 2>[m[K’:
+  135 | class [01;36m[KEnergyObjective[m[K : public BaseT
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:29[m[K:
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:113:26:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual ompl::base::Cost ompl::base::OptimizationObjective::stateCost(const ompl::base::State*) const[m[K’
+  113 |             virtual Cost [01;36m[KstateCost[m[K(const State *s) const = 0;
+      |                          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:234:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class ompl::base::Planner[m[K’ {aka ‘[01m[Kclass ompl::base::Planner[m[K’} has no member named ‘[01m[KsetOptimizationObjective[m[K’
+  234 |  planner->[01;31m[KsetOptimizationObjective[m[K(obj);
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:301:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kground[m[K’ was not declared in this scope; did you mean ‘[01m[Kround[m[K’?
+  301 |   if ([01;31m[Kground[m[K)
+      |       [01;31m[K^~~~~~[m[K
+      |       [32m[Kround[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:324:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kground[m[K’ was not declared in this scope; did you mean ‘[01m[Kround[m[K’?
+  324 |    if (![01;31m[Kground[m[K && point[2] < min_aerial_height)
+      |         [01;31m[K^~~~~~[m[K
+      |         [32m[Kround[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:434:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ros::NodeHandle[m[K’ has no member named ‘[01m[Kadvertse[m[K’; did you mean ‘[01m[Kadvertise[m[K’?
+  434 |  vis_pub = nh.[01;31m[Kadvertse[m[K<visualization_msgs::Marker>(OUTPUT_TOPIC_VIS,5);
+      |               [01;31m[K^~~~~~~~[m[K
+      |               [32m[Kadvertise[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:434:50:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  434 |  vis_pub = nh.advertse<visualization_msgs::Marker[01;31m[K>[m[K(OUTPUT_TOPIC_VIS,5);
+      |                                                  [01;31m[K^[m[K
+/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp: In instantiation of ‘[01m[KEnergyObjective<BaseT, AerialFactor, GroundFactor>::EnergyObjective(const SpaceInformationPtr&) [with BaseT = ompl::base::OptimizationObjective; int AerialFactor = 5; int GroundFactor = 2; ompl::base::SpaceInformationPtr = std::shared_ptr<ompl::base::SpaceInformation>][m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:233:55:[m[K   required from here
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:140:3:[m[K [01;31m[Kerror: [m[Kuninitialized reference member in ‘[01m[Kconst SpaceInformationPtr&[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<ompl::base::SpaceInformation>&[m[K’} [[01;31m[K-fpermissive[m[K]
+  140 |   [01;31m[KEnergyObjective[m[K(const ob::SpaceInformationPtr& si) : BaseT(si) {this->si = si;}
+      |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:138:34:[m[K [01;36m[Knote: [m[K‘[01m[Kconst SpaceInformationPtr& EnergyObjective<ompl::base::OptimizationObjective, 5, 2>::si[m[K’ should be initialized
+  138 |   const ob::SpaceInformationPtr& [01;36m[Ksi[m[K;
+      |                                  [01;36m[K^~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:140:76:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kconst SpaceInformationPtr[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>[m[K’} and ‘[01m[Kconst SpaceInformationPtr[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>[m[K’})
+  140 |   EnergyObjective(const ob::SpaceInformationPtr& si) : BaseT(si) {[01;31m[Kthis->si = si[m[K;}
+      |                                                                   [01;31m[K~~~~~~~~~^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:16[m[K:
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:309:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Tp>&) [with _Tp = ompl::base::SpaceInformation][m[K’ <near match>
+  309 |       shared_ptr& [01;36m[Koperator[m[K=(const shared_ptr&) noexcept = default;
+      |                   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:309:19:[m[K [01;36m[Knote: [m[K  passing ‘[01m[Kconst SpaceInformationPtr*[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>*[m[K’} as ‘[01m[Kthis[m[K’ argument discards qualifiers
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:313:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Yp>&) [with _Yp = ompl::base::SpaceInformation; _Tp = ompl::base::SpaceInformation; std::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> = std::shared_ptr<ompl::base::SpaceInformation>&][m[K’ <near match>
+  313 |  [01;36m[Koperator[m[K=(const shared_ptr<_Yp>& __r) noexcept
+      |  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:313:2:[m[K [01;36m[Knote: [m[K  passing ‘[01m[Kconst SpaceInformationPtr*[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>*[m[K’} as ‘[01m[Kthis[m[K’ argument discards qualifiers
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:324:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::auto_ptr<_Up> > std::shared_ptr<_Tp>::operator=(std::auto_ptr<_Up>&&) [with _Yp = _Yp; _Tp = ompl::base::SpaceInformation][m[K’
+  324 |  [01;36m[Koperator[m[K=(auto_ptr<_Yp>&& __r)
+      |  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:324:2:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:140:76:[m[K [01;36m[Knote: [m[K  types ‘[01m[Kstd::auto_ptr<Y>[m[K’ and ‘[01m[Kconst SpaceInformationPtr[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>[m[K’} have incompatible cv-qualifiers
+  140 |   EnergyObjective(const ob::SpaceInformationPtr& si) : BaseT(si) {[01;36m[Kthis->si = si[m[K;}
+      |                                                                   [01;36m[K~~~~~~~~~^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:16[m[K:
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:333:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Tp>&&) [with _Tp = ompl::base::SpaceInformation][m[K’ <near match>
+  333 |       [01;36m[Koperator[m[K=(shared_ptr&& __r) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:333:7:[m[K [01;36m[Knote: [m[K  conversion of argument 1 would be ill-formed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:140:76:[m[K [01;31m[Kerror: [m[Kcannot bind rvalue reference of type ‘[01m[Kstd::shared_ptr<ompl::base::SpaceInformation>&&[m[K’ to lvalue of type ‘[01m[Kconst SpaceInformationPtr[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>[m[K’}
+  140 |   EnergyObjective(const ob::SpaceInformationPtr& si) : BaseT(si) {[01;31m[Kthis->si = si[m[K;}
+      |                                                                   [01;31m[K~~~~~~~~~^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:16[m[K:
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:341:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::shared_ptr<_Yp> > std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Yp>&&) [with _Yp = _Yp; _Tp = ompl::base::SpaceInformation][m[K’
+  341 |  [01;36m[Koperator[m[K=(shared_ptr<_Yp>&& __r) noexcept
+      |  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:341:2:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:140:76:[m[K [01;36m[Knote: [m[K  types ‘[01m[Kstd::shared_ptr<_Tp>[m[K’ and ‘[01m[Kconst SpaceInformationPtr[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>[m[K’} have incompatible cv-qualifiers
+  140 |   EnergyObjective(const ob::SpaceInformationPtr& si) : BaseT(si) {[01;36m[Kthis->si = si[m[K;}
+      |                                                                   [01;36m[K~~~~~~~~~^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:16[m[K:
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:349:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp, class _Del> std::shared_ptr<_Tp>::_Assignable<std::unique_ptr<_Up, _Ep> > std::shared_ptr<_Tp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Yp = _Yp; _Del = _Del; _Tp = ompl::base::SpaceInformation][m[K’
+  349 |  [01;36m[Koperator[m[K=(unique_ptr<_Yp, _Del>&& __r)
+      |  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:349:2:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:140:76:[m[K [01;36m[Knote: [m[K  types ‘[01m[Kstd::unique_ptr<_Tp, _Dp>[m[K’ and ‘[01m[Kconst SpaceInformationPtr[m[K’ {aka ‘[01m[Kconst std::shared_ptr<ompl::base::SpaceInformation>[m[K’} have incompatible cv-qualifiers
+  140 |   EnergyObjective(const ob::SpaceInformationPtr& si) : BaseT(si) {[01;36m[Kthis->si = si[m[K;}
+      |                                                                   [01;36m[K~~~~~~~~~^~~~[m[K
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1618: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

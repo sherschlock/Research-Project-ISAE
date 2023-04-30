@@ -1,0 +1,115 @@
+<?xml version = "1.0"?>
+
+<!-- ############################################################################
+     ###################### Self-Driving Simulator - ARAV #######################
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez ####################
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ########
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########
+     ############################################################################ -->
+
+<!-- ############################################################################
+
+     This document launch the simulation:
+
+      1. Add other files:
+          1.1 Gazebo client
+          1.2 Environment Perception Module
+          1.3 Local Path Planning Module
+          1.4 Path Control Module
+      2. Parameters
+     	3. Initial conditions
+     	4. Launch world and insert model
+     	5. Launch rviz
+
+     ############################################################################ -->
+
+<launch>
+
+	<!-- 1. INCLUDE OTHER FILES -->
+
+	<!-- <include file="$(find simulator)/visual/client.xml"/> -->
+	<include file="$(find epm)/launch/launch.xml"/>
+	<include file="$(find octomap_server)/launch/launch.xml"/>
+	<include file="$(find path_planning)/launch/launch.xml"/>
+	<!-- <include file="$(find path_selector)/launch/launch.xml"/> -->
+	<!-- <include file="$(find control)/launch/launch.xml"/> -->
+	
+	<!-- 2. PARAMETERS -->
+
+	<arg name = "robotName" default = "arav"/>
+	<arg name = "worldName" default = "depth"/>
+	<arg name = "enableGUI" default = "true"/>
+
+	<!-- 3. INITIAL CONDITIONS -->
+
+	<arg name = "x0" default = "0.0"/>
+	<arg name = "y0" default = "0.0"/>
+	<arg name = "z0" default = "0.1"/>
+	<arg name = "roll0" default = "0.0"/>
+	<arg name = "pitch0" default = "0.0"/>
+	<arg name = "yaw0" default = "3.14159"/>
+
+	<!-- 4. LAUNCH SIMULATION -->
+
+	<group ns = "$(arg robotName)">
+
+		<!-- 4.1 World -->
+
+		<include file = "$(find gazebo_ros)/launch/empty_world.launch">
+
+      			<arg name = "world_name" value = "$(find simulator)/worlds/$(arg worldName).world"/>
+			<arg name="gui" default="$(arg enableGUI)"/>
+
+    		</include>
+
+    		<!-- 4.2 Model -->
+
+    		<param name = "robot_description" command = "$(find xacro)/xacro $(find simulator)/model/main.xml"/>
+
+    		<node name = "spawn_model" pkg = "gazebo_ros" type = "spawn_model" args = "
+
+    			-urdf
+    			-param robot_description
+    			-model arav
+    			-gazebo_namespace /$(arg robotName)/gazebo
+                       -x $(arg x0)
+                       -y $(arg y0)
+                       -z $(arg z0)
+                       -R $(arg roll0)
+                       -P $(arg pitch0)
+                       -Y $(arg yaw0)
+
+		"/>
+
+		<!-- 4.3 Control -->
+
+		<rosparam file = "$(find simulator)/control/params.yaml" command = "load" ns = "/$(arg robotName)"/>
+
+		<node name = "robot_state_publisher" pkg = "robot_state_publisher" type = "robot_state_publisher">
+			<param name = "robot_description" command = "$(find xacro)/xacro $(find simulator)/model/main.xml"/>
+		</node>
+
+		<node name = "control_spawner" pkg = "controller_manager" type = "spawner" args = "
+
+			--namespace=/$(arg robotName)
+			joint_state_controller
+			joint_motor_controller
+		"/>
+
+	</group>
+	
+	<!-- 5. LAUNCH RVIZ -->
+	
+	<node name = "rviz" pkg = "rviz" type = "rviz" args = "-d $(find simulator)/rviz/config.rviz"
+	launch-prefix="bash -c 'sleep 20; $0 $@' "/>
+
+</launch>
+
+<!-- ############################################################################
+     ###################### Self-Driving Simulator - ARAV #######################
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez ####################
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ########
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########
+     ############################################################################ -->

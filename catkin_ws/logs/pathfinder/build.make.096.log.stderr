@@ -1,0 +1,10 @@
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:[m[K In member function ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool> pathfinder::AstarPlanner::findPath(const point3d&, const point3d&, std::shared_ptr<octomap::OcTree>, double)[m[K’:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:148:8:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kauto map_query[m[K’
+  148 |   auto [01;31m[Kmap_query[m[K = mapping_tree->search(goal_coord);
+      |        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:106:8:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Koctomap::OcTreeNode* map_query[m[K’
+  106 |   auto [01;36m[Kmap_query[m[K = mapping_tree->search(goal_coord);
+      |        [01;36m[K^~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/MrsAstarPlanner.dir/build.make:76: CMakeFiles/MrsAstarPlanner.dir/src/astar_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2873: CMakeFiles/MrsAstarPlanner.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

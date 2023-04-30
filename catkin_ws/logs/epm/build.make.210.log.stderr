@@ -1,0 +1,7 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/epm/code/EPMnode.cpp:27:10:[m[K [01;31m[Kfatal error: [m[Kopencv2/cudastereo.hpp: No such file or directory
+   27 | #include [01;31m[K<opencv2/cudastereo.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/EPMnode.dir/build.make:76: CMakeFiles/EPMnode.dir/code/EPMnode.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2969: CMakeFiles/EPMnode.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

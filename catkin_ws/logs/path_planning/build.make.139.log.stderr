@@ -1,0 +1,38 @@
+In file included from [01m[K/home/akash/catkin_ws/src/mrs_lib/include/mrs_lib/batch_visualizer.h:12[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:13[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:3[m[K:
+[01m[K/home/akash/catkin_ws/src/mrs_lib/include/mrs_lib/geometry/shapes.h:652:18:[m[K [01;31m[Kerror: [m[K‘[01m[Koptional[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type
+  652 |       const std::[01;31m[Koptional[m[K<Eigen::Vector3d> projectPoint(const Eigen::Vector3d& point) const;
+      |                  [01;31m[K^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_lib/include/mrs_lib/geometry/shapes.h:652:13:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::optional[m[K’ is only available from C++17 onwards
+  652 |       const [01;36m[Kstd[m[K::optional<Eigen::Vector3d> projectPoint(const Eigen::Vector3d& point) const;
+      |             [01;36m[K^~~[m[K
+In file included from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:3[m[K:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:101:8:[m[K [01;31m[Kerror: [m[K‘[01m[Koptional[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type
+  101 |   std::[01;31m[Koptional[m[K<std::pair<std::shared_ptr<octomap::OcTree>, std::vector<octomap::point3d>>> createPlanningTree(std::shared_ptr<octomap::OcTree> tree,
+      |        [01;31m[K^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:101:3:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::optional[m[K’ is only available from C++17 onwards
+  101 |   [01;36m[Kstd[m[K::optional<std::pair<std::shared_ptr<octomap::OcTree>, std::vector<octomap::point3d>>> createPlanningTree(std::shared_ptr<octomap::OcTree> tree,
+      |   [01;36m[K^~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:28:3:[m[K [01;31m[Kerror: [m[K‘[01m[KAstarPlanner[m[K’ does not name a type
+   28 |   [01;31m[KAstarPlanner[m[K astar_planner_;
+      |   [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In constructor ‘[01m[KMyPlanner::MyPlanner()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:8:27:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KMyPlanner[m[K’ does not have any field named ‘[01m[Kastar_planner_[m[K’
+    8 |   MyPlanner() : nh_("~"), [01;31m[Kastar_planner_[m[K(nh_) {
+      |                           [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In member function ‘[01m[Kvoid MyPlanner::octomapCallback(const ConstPtr&)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:14:76:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgToMap[m[K’ is not a member of ‘[01m[Koctomap_msgs[m[K’
+   14 |     octomap::OcTree* octree = dynamic_cast<octomap::OcTree*>(octomap_msgs::[01;31m[KmsgToMap[m[K(*msg));
+      |                                                                            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:20:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kastar_planner_[m[K’ was not declared in this scope
+   20 |     [01;31m[Kastar_planner_[m[K.findPath(start, goal, octree, waypoints);
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/Astar_caller.dir/build.make:76: CMakeFiles/Astar_caller.dir/code/Astar_caller.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2807: CMakeFiles/Astar_caller.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::stateCost(const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:117:58:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  117 |   ob::Cost stateCost(const ob::State* s) const override {[01;35m[K}[m[K
+      |                                                          [01;35m[K^[m[K
+make: *** [Makefile:146: all] Error 2

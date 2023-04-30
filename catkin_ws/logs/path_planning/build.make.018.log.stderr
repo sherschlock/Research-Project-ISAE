@@ -1,0 +1,47 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::motionCost(const ompl::base::State*, const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:165:19:[m[K [01;31m[Kerror: [m[K‘[01m[Ksi[m[K’ was not declared in this scope; did you mean ‘[01m[Ksi_[m[K’?
+  165 |    double cost = &[01;31m[Ksi[m[K->distance(s1, s2) * factor;
+      |                   [01;31m[K^~[m[K
+      |                   [32m[Ksi_[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:166:11:[m[K [01;31m[Kerror: [m[K‘[01m[KCost[m[K’ was not declared in this scope; did you mean ‘[01m[Kompl::base::Cost[m[K’?
+  166 |    return [01;31m[KCost[m[K(cost,0.0);
+      |           [01;31m[K^~~~[m[K
+      |           [32m[Kompl::base::Cost[m[K
+In file included from [01m[K/usr/include/ompl/base/OptimizationObjective.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:29[m[K:
+[01m[K/usr/include/ompl/base/Cost.h:47:15:[m[K [01;36m[Knote: [m[K‘[01m[Kompl::base::Cost[m[K’ declared here
+   47 |         class [01;36m[KCost[m[K
+      |               [01;36m[K^~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kvoid plan()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:245:18:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Kobj[m[K’ to be of abstract type ‘[01m[KEnergyObjective[m[K’
+  245 |  EnergyObjective [01;31m[Kobj[m[K(si);
+      |                  [01;31m[K^~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:134:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KEnergyObjective[m[K’:
+  134 | class [01;36m[KEnergyObjective[m[K : public ob::OptimizationObjective
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:29[m[K:
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:113:26:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual ompl::base::Cost ompl::base::OptimizationObjective::stateCost(const ompl::base::State*) const[m[K’
+  113 |             virtual Cost [01;36m[KstateCost[m[K(const State *s) const = 0;
+      |                          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:246:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class ompl::base::Planner[m[K’ {aka ‘[01m[Kclass ompl::base::Planner[m[K’} has no member named ‘[01m[KsetOptimizationObjective[m[K’
+  246 |  planner->[01;31m[KsetOptimizationObjective[m[K(obj);
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:313:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kground[m[K’ was not declared in this scope; did you mean ‘[01m[Kround[m[K’?
+  313 |   if ([01;31m[Kground[m[K)
+      |       [01;31m[K^~~~~~[m[K
+      |       [32m[Kround[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:336:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kground[m[K’ was not declared in this scope; did you mean ‘[01m[Kround[m[K’?
+  336 |    if (![01;31m[Kground[m[K && point[2] < min_aerial_height)
+      |         [01;31m[K^~~~~~[m[K
+      |         [32m[Kround[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:446:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ros::NodeHandle[m[K’ has no member named ‘[01m[Kadvertse[m[K’; did you mean ‘[01m[Kadvertise[m[K’?
+  446 |  vis_pub = nh.[01;31m[Kadvertse[m[K<visualization_msgs::Marker>(OUTPUT_TOPIC_VIS,5);
+      |               [01;31m[K^~~~~~~~[m[K
+      |               [32m[Kadvertise[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:446:50:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  446 |  vis_pub = nh.advertse<visualization_msgs::Marker[01;31m[K>[m[K(OUTPUT_TOPIC_VIS,5);
+      |                                                  [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1618: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

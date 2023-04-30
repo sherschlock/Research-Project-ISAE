@@ -1,0 +1,37 @@
+<?xml version = "1.0"?>
+
+<!-- ############################################################################
+     ###################### Gazebo Client - ARAV Simulator ######################
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez ####################
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ########
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########
+     ############################################################################ -->
+
+<launch>
+
+	<!-- Parameters -->
+
+	<arg name = "directory" default = "$(find simulator)"/>
+	<arg name = "robotName" default = "arav"/>
+	<arg name = "save" default = "false"/>
+	<arg name = "updateRate" default = "15"/>
+
+	<!-- ARAV Gazebo client node -->
+
+	<group ns = "$(arg robotName)">
+
+		<node name = "visualizer" pkg = "simulator" type = "client.py"
+			output = "screen" args="$(arg directory) $(arg save) $(arg updateRate)"/>
+
+	</group>
+
+</launch>
+
+<!-- ############################################################################
+     ###################### Gazebo Client - ARAV Simulator ######################
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez ####################
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ########
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########
+     ############################################################################ -->

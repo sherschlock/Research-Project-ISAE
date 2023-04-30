@@ -1,0 +1,61 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-3NGC9i
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a409a/fast && /usr/bin/make  -f CMakeFiles/cmTC_a409a.dir/build.make CMakeFiles/cmTC_a409a.dir/build
+make[1]: Entering directory '/home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-3NGC9i'
+Building C object CMakeFiles/cmTC_a409a.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a409a.dir/src.c.o -c /home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-3NGC9i/src.c
+Linking C executable cmTC_a409a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a409a.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_a409a.dir/src.c.o -o cmTC_a409a 
+/usr/bin/ld: CMakeFiles/cmTC_a409a.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_a409a.dir/build.make:99: cmTC_a409a] Error 1
+make[1]: Leaving directory '/home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-3NGC9i'
+make: *** [Makefile:127: cmTC_a409a/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-N4Oqtj
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_bd61d/fast && /usr/bin/make  -f CMakeFiles/cmTC_bd61d.dir/build.make CMakeFiles/cmTC_bd61d.dir/build
+make[1]: Entering directory '/home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-N4Oqtj'
+Building C object CMakeFiles/cmTC_bd61d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_bd61d.dir/CheckFunctionExists.c.o -c /home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-N4Oqtj/CheckFunctionExists.c
+Linking C executable cmTC_bd61d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd61d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_bd61d.dir/CheckFunctionExists.c.o -o cmTC_bd61d  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_bd61d.dir/build.make:99: cmTC_bd61d] Error 1
+make[1]: Leaving directory '/home/akash/catkin_ws/build/dd_bot/CMakeFiles/CMakeScratch/TryCompile-N4Oqtj'
+make: *** [Makefile:127: cmTC_bd61d/fast] Error 2
+
+
+

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0"/>
+    <arg name="R" default="0"/>
+    <arg name="P" default="0"/>
+    <arg name="Y" default="0"/>
+    <!-- vehicle model and world -->
+    <arg name="est" default="ekf2"/>
+    <arg name="vehicle" default="dd_bot"/>
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/>
+    <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+
+    <!-- gazebo configs -->
+    <arg name="gui" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="false"/>
+    <arg name="paused" default="false"/>
+    <arg name="respawn_gazebo" default="false"/>
+
+
+
+  <!--include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" default="$(find avoidance)/sim/worlds/boxes1.world"/>
+		<arg name="paused" value="false"/>
+		<arg name="gui" value="true"/>
+  </include-->
+
+
+ <!---include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <param name="dd_bot/robot_description" command="$(find xacro)/xacro.py $(find dd_bot)/urdf/dd_bot.xacro"/>
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" ns = "dd_bot" args="-param robot_description -urdf -model dd_bot" 
+    output="screen" />
+  <node name="spawn_obstacle" pkg="gazebo_ros" type="spawn_model" ns = "dd_bot" args="-file $(find dd_bot)/urdf/obstacle/model.sdf -sdf -model wall" output="screen" /-->
+
+
+    <!-- Gazebo sim -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="world_name" value="$(arg world)"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="respawn_gazebo" value="$(arg respawn_gazebo)"/>
+    </include>
+
+  <param name="dd_bot/robot_description" command="$(find xacro)/xacro.py $(find dd_bot)/urdf/dd_bot.xacro"/>
+
+    <!-- gazebo model -->
+    <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -file $(arg sdf) -model $(arg vehicle)"/>
+
+  <rosparam file="$(find dd_bot)/config/my_odom.yaml" command="load"/>
+  <node name="control_spawner" pkg="controller_manager" type="spawner" respawn="false" ns="dd_bot"
+	output="screen" args="joint_state_controller right_wheel_controller left_wheel_controller"/>
+  <node name="robot_state_publisher" ns="dd_bot" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">	<remap from="/joint_states" to="/dd_bot/joint_states" />
+  </node>
+
+</launch>

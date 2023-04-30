@@ -1,0 +1,8 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In member function ‘[01m[Kvoid MyPlanner::octomapCallback(const ConstPtr&)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:35:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class octomap::OcTree[m[K’ {aka ‘[01m[Kclass octomap::OcTree[m[K’} has no member named ‘[01m[KgetTreeSize[m[K’; did you mean ‘[01m[KgetTreeType[m[K’?
+   35 |     octomap::point3d tree_size = octree->[01;31m[KgetTreeSize[m[K();
+      |                                          [01;31m[K^~~~~~~~~~~[m[K
+      |                                          [32m[KgetTreeType[m[K
+make[2]: *** [CMakeFiles/Astar_caller.dir/build.make:76: CMakeFiles/Astar_caller.dir/code/Astar_caller.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2807: CMakeFiles/Astar_caller.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

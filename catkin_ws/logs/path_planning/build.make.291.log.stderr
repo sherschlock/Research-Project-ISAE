@@ -1,0 +1,74 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::stateCost(const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:128:58:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  128 |   ob::Cost stateCost(const ob::State* s) const override {[01;35m[K}[m[K
+      |                                                          [01;35m[K^[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kvoid plan()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:384:47:[m[K [01;31m[Kerror: [m[Kconversion from ‘[01m[Kompl::base::State*[m[K’ to non-scalar type ‘[01m[Kconst ompl::base::State[m[K’ requested
+  384 |     const ob::State prev_state = [01;31m[Kpth->getState(i - 1)[m[K;
+      |                                  [01;31m[K~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:384:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kvirtual ompl::base::State::~State()[m[K’ is protected within this context
+  384 |     const ob::State prev_state = pth->getState(i - 1[01;31m[K)[m[K;
+      |                                                     [01;31m[K^[m[K
+In file included from [01m[K/usr/include/ompl/base/StateSpace.h:40[m[K,
+                 from [01m[K/usr/include/ompl/base/spaces/SE3StateSpace.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:28[m[K:
+[01m[K/usr/include/ompl/base/State.h:61:21:[m[K [01;36m[Knote: [m[Kdeclared protected here
+   61 |             virtual [01;36m[K~[m[KState() = default;
+      |                     [01;36m[K^[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:385:47:[m[K [01;31m[Kerror: [m[Kconversion from ‘[01m[Kompl::base::State*[m[K’ to non-scalar type ‘[01m[Kconst ompl::base::State[m[K’ requested
+  385 |     const ob::State curr_state = [01;31m[Kpth->getState(i)[m[K;
+      |                                  [01;31m[K~~~~~~~~~~~~~^~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:385:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kvirtual ompl::base::State::~State()[m[K’ is protected within this context
+  385 |     const ob::State curr_state = pth->getState(i[01;31m[K)[m[K;
+      |                                                 [01;31m[K^[m[K
+In file included from [01m[K/usr/include/ompl/base/StateSpace.h:40[m[K,
+                 from [01m[K/usr/include/ompl/base/spaces/SE3StateSpace.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:28[m[K:
+[01m[K/usr/include/ompl/base/State.h:61:21:[m[K [01;36m[Knote: [m[Kdeclared protected here
+   61 |             virtual [01;36m[K~[m[KState() = default;
+      |                     [01;36m[K^[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:386:42:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator*[m[K’ (operand type is ‘[01m[Kconst ompl::base::State[m[K’)
+  386 |     double motion_cost = obj->motionCost([01;31m[K*prev_state[m[K, *curr_state);
+      |                                          [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/ompl/base/spaces/SE3StateSpace.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:28[m[K:
+[01m[K/usr/include/ompl/base/StateSpace.h:778:23:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::StateSpacePtr ompl::base::operator*(const StateSpacePtr&, const StateSpacePtr&)[m[K’
+  778 |         StateSpacePtr [01;36m[Koperator[m[K*(const StateSpacePtr &a, const StateSpacePtr &b);
+      |                       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/ompl/base/StateSpace.h:778:23:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+In file included from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:29[m[K:
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:279:34:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::OptimizationObjectivePtr ompl::base::operator*(double, const OptimizationObjectivePtr&)[m[K’
+  279 |         OptimizationObjectivePtr [01;36m[Koperator[m[K*(double weight, const OptimizationObjectivePtr &a);
+      |                                  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:279:34:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:283:34:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::OptimizationObjectivePtr ompl::base::operator*(const OptimizationObjectivePtr&, double)[m[K’
+  283 |         OptimizationObjectivePtr [01;36m[Koperator[m[K*(const OptimizationObjectivePtr &a, double weight);
+      |                                  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:283:34:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:386:55:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator*[m[K’ (operand type is ‘[01m[Kconst ompl::base::State[m[K’)
+  386 |     double motion_cost = obj->motionCost(*prev_state, [01;31m[K*curr_state[m[K);
+      |                                                       [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/ompl/base/spaces/SE3StateSpace.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:28[m[K:
+[01m[K/usr/include/ompl/base/StateSpace.h:778:23:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::StateSpacePtr ompl::base::operator*(const StateSpacePtr&, const StateSpacePtr&)[m[K’
+  778 |         StateSpacePtr [01;36m[Koperator[m[K*(const StateSpacePtr &a, const StateSpacePtr &b);
+      |                       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/ompl/base/StateSpace.h:778:23:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+In file included from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:29[m[K:
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:279:34:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::OptimizationObjectivePtr ompl::base::operator*(double, const OptimizationObjectivePtr&)[m[K’
+  279 |         OptimizationObjectivePtr [01;36m[Koperator[m[K*(double weight, const OptimizationObjectivePtr &a);
+      |                                  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:279:34:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:283:34:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kompl::base::OptimizationObjectivePtr ompl::base::operator*(const OptimizationObjectivePtr&, double)[m[K’
+  283 |         OptimizationObjectivePtr [01;36m[Koperator[m[K*(const OptimizationObjectivePtr &a, double weight);
+      |                                  [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/ompl/base/OptimizationObjective.h:283:34:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:389:36:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  389 |   ECost_pub.publish(waypoint_costs)
+      |                                    [01;31m[K^[m[K
+      |                                    [32m[K;[m[K
+  390 |   [32m[K}[m[K
+      |   [32m[K~[m[K                                 
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2781: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

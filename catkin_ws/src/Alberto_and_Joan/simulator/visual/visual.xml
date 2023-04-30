@@ -1,0 +1,47 @@
+<?xml version = "1.0"?>
+
+<!-- ############################################################################
+     ###################### Self-Driving Simulator - ARAV #######################
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez ####################
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ########
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########
+     ############################################################################ -->
+
+<!-- ############################################################################
+
+     This document contains the desciption of an external camera used to
+     visualize the simulation >> Customized Gazebo client.
+
+     ############################################################################ -->
+
+<robot name = "arav" xmlns:xacro = "http://www.ros.org/wiki/xacro">
+
+	<xacro:camera
+
+		LinkName = "visualCamera"
+		JointName = "visualCamera_joint"
+		CamXoffset = "1.2"
+		CamYoffset = "0.0"
+		CamZoffset = "0.5"
+		CamRollAngle="0.20"
+		CamYawAngle = "3.15"
+		CamUpdateRate = "15"
+		FOV = "1.75"
+		CamWidth = "1280"
+		CamHeight = "720"
+		CamMinDistance = "0.001"
+		CamMaxDistance = "100.0"
+		NoiseIntensity = "0.0"
+
+	/>
+
+</robot>
+
+<!-- ############################################################################
+     ###################### Self-Driving Simulator - ARAV #######################
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez ####################
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ########
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########
+     ############################################################################ -->

@@ -1,0 +1,1 @@
+/home/akash/catkin_ws/devel/.private/pysdf/share/pysdf/cmake/pysdfConfig.cmake

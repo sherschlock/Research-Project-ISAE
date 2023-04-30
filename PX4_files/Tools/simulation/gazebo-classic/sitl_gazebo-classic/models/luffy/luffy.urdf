@@ -1,0 +1,790 @@
+<?xml version="1.0" ?>
+<robot name="luffy">
+  
+  <gazebo>
+    <plugin filename="libgazebo_ros_skid_steer_drive.so" name="skid_steer_drive_controller">
+      <updateRate>100</updateRate>
+      <!-- Plugin update rate in Hz -->
+      <robotNamespace>control/ground</robotNamespace>
+      <!-- Robot name -->
+      <leftFrontJoint>tire_rightFront_joint</leftFrontJoint>
+      <!-- Name of left front joint -->
+      <rightFrontJoint>tire_leftFront_joint</rightFrontJoint>
+      <!-- Name of right front joint -->
+      <leftRearJoint>tire_rightRear_joint</leftRearJoint>
+      <!-- Name of left rear joint -->
+      <rightRearJoint>tire_leftRear_joint</rightRearJoint>
+      <!-- Name of right rear joint -->
+      <wheelSeparation>0.16666666666666669</wheelSeparation>
+      <!-- The distance from the center of one wheel to the other -->
+      <wheelDiameter>0.1</wheelDiameter>
+      <!-- Diameter of the wheels -->
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <!-- Robot frame to calculate odometry from -->
+      <torque>50</torque>
+      <!-- Maximum torque which the wheels can produce -->
+      <broadcastTF>true</broadcastTF>
+      <!-- Set to true to publish transforms for the wheel links -->
+      <commandTopic>cmd</commandTopic>
+      <!-- Topic to receive geometry_msgs/Twist message commands -->
+      <odometryTopic>odom</odometryTopic>
+      <!-- Topic to publish nav_msgs/Odometry messages -->
+      <odometryFrame>odom</odometryFrame>
+      <!-- Odometry frame -->
+      <covariance_x>0.0001</covariance_x>
+      <!-- Default X covariance -->
+      <covariance_y>0.0001</covariance_y>
+      <!-- Default Y covariance -->
+      <covariance_yaw>0.0001</covariance_yaw>
+      <!-- Default Yaw covariance -->
+    </plugin>
+    <!-- 2. AERIAL MODULE CONTROLLER -->
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNameSpace>/control/air</robotNameSpace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <!-- Camera sensors -->
+  <link name="frontRightCamera">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.000001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="FrontRightCamera2GroundCore" type="fixed">
+    <parent link="frame_link"/>
+    <child link="frontRightCamera"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0.0 3.141592" xyz="-0.25 0.05 0.1"/>
+  </joint>
+  <gazebo reference="frontRightCamera">
+    <sensor name="frontRightCamera" type="camera">
+      <update_rate>0.4</update_rate>
+      <camera name="frontRightCamera">
+        <horizontal_fov>1.570796</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.01</near>
+          <far>100.0</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.0</stddev>
+        </noise>
+      </camera>
+      <plugin filename="libgazebo_ros_camera.so" name="camera_plugin">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.4</updateRate>
+        <cameraName>sensors/frontRightCamera</cameraName>
+        <imageTopicName>image</imageTopicName>
+        <cameraInfoTopicName>info</cameraInfoTopicName>
+        <frameName>frontRightCamera</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link name="frontLeftCamera">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.000001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="FrontLeftCamera2GroundCore" type="fixed">
+    <parent link="frame_link"/>
+    <child link="frontLeftCamera"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0.0 3.141592" xyz="-0.25 -0.05 0.1"/>
+  </joint>
+  <gazebo reference="frontLeftCamera">
+    <sensor name="frontLeftCamera" type="camera">
+      <update_rate>0.4</update_rate>
+      <camera name="frontLeftCamera">
+        <horizontal_fov>1.570796</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.01</near>
+          <far>100.0</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.0</stddev>
+        </noise>
+      </camera>
+      <plugin filename="libgazebo_ros_camera.so" name="camera_plugin">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.4</updateRate>
+        <cameraName>sensors/frontLeftCamera</cameraName>
+        <imageTopicName>image</imageTopicName>
+        <cameraInfoTopicName>info</cameraInfoTopicName>
+        <frameName>frontLeftCamera</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- END -->
+
+  <!-- Ultrasonic sensors -->
+  <link name="frontUltrasonic">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.000001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="FrontUltrasonic2GroundCore" type="fixed">
+    <parent link="frame_link"/>
+    <child link="frontUltrasonic"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0 3.141592" xyz="-0.13 0.0 0"/>
+  </joint>
+  <gazebo reference="frontUltrasonic">
+    <sensor name="frontUltrasonic" type="ray">
+      <update_rate>1</update_rate>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>10</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.05</min_angle>
+            <max_angle>0.05</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.02</min>
+          <max>6</max>
+          <resolution>0.03</resolution>
+        </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="ultrasonic_plugin">
+        <gaussianNoise>0.0</gaussianNoise>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1</updateRate>
+        <topicName>sensors/frontUltrasonic</topicName>
+        <frameName>frontUltrasonic</frameName>
+        <radiation>ultrasound</radiation>
+        <fov>0.05--0.05</fov>
+        <visualize>true</visualize>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link name="leftUltrasonic">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.000001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="LeftUltrasonic2GroundCore" type="fixed">
+    <parent link="frame_link"/>
+    <child link="leftUltrasonic"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0 2.6179933333333336" xyz="-0.13 -0.075 0"/>
+  </joint>
+  <gazebo reference="leftUltrasonic">
+    <sensor name="leftUltrasonic" type="ray">
+      <update_rate>1</update_rate>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>10</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.05</min_angle>
+            <max_angle>0.05</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.02</min>
+          <max>6</max>
+          <resolution>0.03</resolution>
+        </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="ultrasonic_plugin">
+        <gaussianNoise>0.0</gaussianNoise>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1</updateRate>
+        <topicName>sensors/leftUltrasonic</topicName>
+        <frameName>leftUltrasonic</frameName>
+        <radiation>ultrasound</radiation>
+        <fov>0.05--0.05</fov>
+        <visualize>true</visualize>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link name="rightUltrasonic">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.000001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="RightUltrasonic2GroundCore" type="fixed">
+    <parent link="frame_link"/>
+    <child link="rightUltrasonic"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0 3.6651906666666667" xyz="-0.13 0.075 0"/>
+  </joint>
+  <gazebo reference="rightUltrasonic">
+    <sensor name="rightUltrasonic" type="ray">
+      <update_rate>1</update_rate>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>10</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.05</min_angle>
+            <max_angle>0.05</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.02</min>
+          <max>6</max>
+          <resolution>0.03</resolution>
+        </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="ultrasonic_plugin">
+        <gaussianNoise>0.0</gaussianNoise>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1</updateRate>
+        <topicName>sensors/rightUltrasonic</topicName>
+        <frameName>rightUltrasonic</frameName>
+        <radiation>ultrasound</radiation>
+        <fov>0.05--0.05</fov>
+        <visualize>true</visualize>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- END -->
+
+  <link name="visualCamera">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.000001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+  <joint name="visualCamera_joint" type="fixed">
+    <parent link="frame_link"/>
+    <child link="visualCamera"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0.2 3.15" xyz="1.2 0.0 0.5"/>
+  </joint>
+  <gazebo reference="visualCamera">
+    <sensor name="visualCamera" type="camera">
+      <update_rate>15</update_rate>
+      <camera name="visualCamera">
+        <horizontal_fov>1.75</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.001</near>
+          <far>100.0</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.0</stddev>
+        </noise>
+      </camera>
+      <plugin filename="libgazebo_ros_camera.so" name="camera_plugin">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>15</updateRate>
+        <cameraName>sensors/visualCamera</cameraName>
+        <imageTopicName>image</imageTopicName>
+        <cameraInfoTopicName>info</cameraInfoTopicName>
+        <frameName>visualCamera</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- 2. ROBOT DEFINITION -->
+  <link name="base_link"/>
+  <!-- 2.1 Frame -->
+  <!-- Frame = link + joint -->
+  <link name="frame_link">
+    <inertial>
+      <mass value="0.510673"/>
+      <origin xyz="0       0      -0.00065" rpy="0 0 0"/>
+      <inertia ixx="0.000722388" ixy="1.63791e-24" ixz="-5.50202e-07" iyy="0.00158624" iyz="-1.38686e-13" izz="0.00223359"/>
+    </inertial>
+    <collision name="base_link_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.2 0.2 0.08"/>
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_1">
+      <origin xyz="0.08  0   -0.04" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="base_link_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.2 0.2 0.08"/>
+      </geometry>
+    </visual>
+    <visual name="base_link_fixed_joint_lump__caster_visual_1">
+      <origin xyz="0.08  0   -0.04" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="frame_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="frame_link"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <!-- 2.2 Wheels -->
+  <link name="left_wheel">
+    <inertial>
+      <mass value="0.00333333"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.16667e-06" ixy="0" ixz="0" iyy="2.16049e-06" iyz="0" izz="2.16049e-06"/>
+    </inertial>
+    <collision name="left_wheel_collision">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="left_wheel_visual">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="frame_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="-0.09   0.105  0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="50.0" velocity="50.0"/>
+  </joint>
+
+  <link name="right_wheel">
+    <inertial>
+      <mass value="0.00333333"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.16667e-06" ixy="0" ixz="0" iyy="2.16049e-06" iyz="0" izz="2.16049e-06"/>
+    </inertial>
+    <collision name="right_wheel_collision">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_visual">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="frame_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="-0.09  -0.105  0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="50.0" velocity="50.0"/>
+  </joint>
+
+  <link name="left_wheel2">
+    <inertial>
+      <mass value="0.00333333"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.16667e-06" ixy="0" ixz="0" iyy="2.16049e-06" iyz="0" izz="2.16049e-06"/>
+    </inertial>
+    <collision name="left_wheel_collision2">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="left_wheel_visual2">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="left_wheel_joint2" type="continuous">
+    <parent link="frame_link"/>
+    <child link="left_wheel2"/>
+    <origin xyz="0.09  0.105 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="50.0" velocity="50.0"/>
+  </joint>
+
+  <link name="right_wheel2">
+    <inertial>
+      <mass value="0.00333333"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.16667e-06" ixy="0" ixz="0" iyy="2.16049e-06" iyz="0" izz="2.16049e-06"/>
+    </inertial>
+    <collision name="right_wheel_collision2">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_visual2">
+      <origin xyz="0 0 0" rpy="1.57079 0      0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="right_wheel_joint2" type="continuous">
+    <parent link="frame_link"/>
+    <child link="right_wheel2"/>
+    <origin xyz="0.09  -0.105  0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="50.0" velocity="50.0"/>
+  </joint>
+
+  <joint name="iris_joint" type="fixed">
+    <parent link="frame_link"/>
+    <child link="iris_base_link"/>
+    <origin xyz="0   0   0.08" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+
+  <joint name="iris_imu_joint" type="fixed">
+    <parent link="iris_base_link"/>
+    <child link="iris_imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_rotor_0_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_0"/>
+    <origin xyz="0.1 0.1 0.1" rpy="-0.35087 -0.90865  0.17271"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_rotor_1_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_1"/>
+    <origin xyz="-0.1  0.1  0.1" rpy="-2.20271  0.21293 -0.41528"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_rotor_2_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_2"/>
+    <origin xyz="0.1 -0.1  0.1" rpy="2.20271 -0.21293 -0.41528"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_rotor_3_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_3"/>
+    <origin xyz="-0.1 -0.1  0.1" rpy="0.35087 0.90865 0.17271"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_rotor_4_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_4"/>
+    <origin xyz="0.1  0.1 -0.1" rpy="0.35087 0.90865 0.17271"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+  
+  <joint name="iris_rotor_5_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_5"/>
+    <origin xyz="-0.1  0.1 -0.1" rpy="2.20271 -0.21293 -0.41528"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_rotor_6_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_6"/>
+    <origin xyz="0.1 -0.1 -0.1" rpy="-2.20271  0.21293 -0.41528"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_rotor_7_joint" type="continuous">
+    <parent link="iris_base_link"/>
+    <child link="iris_rotor_7"/>
+    <origin xyz="-0.1 -0.1 -0.1" rpy="-0.35087 -0.90865  0.17271"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0.0" velocity="0.0"/>
+  </joint>
+
+  <joint name="iris_gps_joint" type="fixed">
+    <parent link="iris_base_link"/>
+    <child link="iris_gps_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+
+  <joint name="iris_mag_joint" type="fixed">
+    <parent link="iris_base_link"/>
+    <child link="iris_mag_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+
+  <link name="iris_base_link">
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.085225" ixy="0" ixz="0" iyy="0.085225" iyz="0" izz="0.085225"/>
+    </inertial>
+    <collision name="iris_base_link_inertia_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+    </collision>
+    <visual name="iris_base_link_inertia_visual">
+      <origin xyz="-0.23 -0.32 -0.45" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_0">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_0_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_0_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_ccw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_1">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_1_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_ccw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_2">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_2_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_2_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_cw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_3">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_3_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_3_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_cw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_4">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_4_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_4_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_cw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_5">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_5_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_5_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_cw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_6">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_6_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_6_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_cw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_rotor_7">
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <collision name="iris_rotor_7_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.064" length="0.005"/>
+      </geometry>
+    </collision>
+    <visual name="iris_rotor_7_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://beginner_tutorials/meshes/iris_prop_cw.dae" scale="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_imu_link">
+    <inertial>
+      <mass value="0.015"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05"/>
+    </inertial>
+    <visual name="iris_imu_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_gps_link">
+    <inertial>
+      <mass value="0.015"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05"/>
+    </inertial>
+    <visual name="iris_gps_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.002"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="iris_mag_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-07" ixy="0" ixz="0" iyy="1e-07" iyz="0" izz="1e-07"/>
+    </inertial>
+    <visual name="iris_mag_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.1"/>
+      </geometry>
+    </visual>
+  </link>
+  
+</robot>

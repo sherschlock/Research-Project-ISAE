@@ -1,0 +1,8 @@
+prefix=/home/akash/catkin_ws/devel/.private/pathfinder
+
+Name: pathfinder
+Description: Description of pathfinder
+Version: 1.0.0
+Cflags: -I/home/akash/catkin_ws/src/mrs_octomap_planner/include -I/opt/ros/noetic/include
+Libs: -L${prefix}/lib -lPathfinder -lMrsAstarPlanner /opt/ros/noetic/lib/liboctomap.so /opt/ros/noetic/lib/liboctomath.so
+Requires: roscpp nodelet mrs_lib std_msgs nav_msgs mrs_msgs mrs_subt_planning_lib

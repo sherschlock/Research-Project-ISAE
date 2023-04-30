@@ -1,0 +1,17 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:27:3:[m[K [01;31m[Kerror: [m[K‘[01m[KAstarPlanner[m[K’ does not name a type
+   27 |   [01;31m[KAstarPlanner[m[K astar_planner_;
+      |   [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In constructor ‘[01m[KMyPlanner::MyPlanner()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:7:27:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KMyPlanner[m[K’ does not have any field named ‘[01m[Kastar_planner_[m[K’
+    7 |   MyPlanner() : nh_("~"), [01;31m[Kastar_planner_[m[K(nh_) {
+      |                           [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In member function ‘[01m[Kvoid MyPlanner::octomapCallback(const ConstPtr&)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:13:76:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgToMap[m[K’ is not a member of ‘[01m[Koctomap_msgs[m[K’
+   13 |     octomap::OcTree* octree = dynamic_cast<octomap::OcTree*>(octomap_msgs::[01;31m[KmsgToMap[m[K(*msg));
+      |                                                                            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:19:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kastar_planner_[m[K’ was not declared in this scope
+   19 |     [01;31m[Kastar_planner_[m[K.findPath(start, goal, octree, waypoints);
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/Astar_caller.dir/build.make:76: CMakeFiles/Astar_caller.dir/code/Astar_caller.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2807: CMakeFiles/Astar_caller.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

@@ -1,0 +1,1 @@
+/home/akash/catkin_ws/devel/.private/mrs_msgs/share/roseus/ros/mrs_msgs/msg/TrajectoryReference.l

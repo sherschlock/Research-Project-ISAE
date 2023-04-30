@@ -1,0 +1,3 @@
+<launch>
+    <param name="params_a" type="yaml" command="cat '$(find roslaunch)/test/params.yaml'" />
+</launch>

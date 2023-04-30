@@ -1,0 +1,49 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:134:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kdouble[m[K’ is not a valid type for a template non-type parameter
+  134 | template<typename BaseT, double [01;31m[KAerialFactor[m[K, double GroundFactor>
+      |                                 [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:134:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kdouble[m[K’ is not a valid type for a template non-type parameter
+  134 | template<typename BaseT, double AerialFactor, double [01;31m[KGroundFactor[m[K>
+      |                                                      [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kvoid plan()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:231:51:[m[K [01;36m[Knote: [m[Kinvalid template non-type parameter
+  231 |  EnergyObjective<ob::OptimizationObjective,2.0,0.8[01;36m[K>[m[K obj(si);
+      |                                                   [01;36m[K^[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:231:51:[m[K [01;36m[Knote: [m[Kinvalid template non-type parameter
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:231:57:[m[K [01;31m[Kerror: [m[Kinvalid user-defined conversion from ‘[01m[Kompl::base::SpaceInformationPtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<ompl::base::SpaceInformation>[m[K’} to ‘[01m[Kint[m[K’ [[01;31m[K-fpermissive[m[K]
+  231 |  EnergyObjective<ob::OptimizationObjective,2.0,0.8> obj([01;31m[Ksi[m[K);
+      |                                                         [01;31m[K^~[m[K
+In file included from [01m[K/usr/include/c++/9/bits/shared_ptr.h:52[m[K,
+                 from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/usr/include/boost/config/no_tr1/memory.hpp:21[m[K,
+                 from [01m[K/usr/include/boost/smart_ptr/shared_ptr.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/shared_ptr.hpp:17[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/forwards.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:16[m[K:
+[01m[K/usr/include/c++/9/bits/shared_ptr_base.h:1312:16:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kstd::__shared_ptr<_Tp, _Lp>::operator bool() const [with _Tp = ompl::base::SpaceInformation; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’ <near match>
+ 1312 |       explicit [01;36m[Koperator[m[K bool() const // never throws
+      |                [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr_base.h:1312:16:[m[K [01;36m[Knote: [m[K  return type ‘[01m[Kbool[m[K’ of explicit conversion function cannot be converted to ‘[01m[Kint[m[K’ with a qualification conversion
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:232:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class ompl::base::Planner[m[K’ {aka ‘[01m[Kclass ompl::base::Planner[m[K’} has no member named ‘[01m[KsetOptimizationObjective[m[K’
+  232 |  planner->[01;31m[KsetOptimizationObjective[m[K(obj);
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:299:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kground[m[K’ was not declared in this scope; did you mean ‘[01m[Kround[m[K’?
+  299 |   if ([01;31m[Kground[m[K)
+      |       [01;31m[K^~~~~~[m[K
+      |       [32m[Kround[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:322:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kground[m[K’ was not declared in this scope; did you mean ‘[01m[Kround[m[K’?
+  322 |    if (![01;31m[Kground[m[K && point[2] < min_aerial_height)
+      |         [01;31m[K^~~~~~[m[K
+      |         [32m[Kround[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:432:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ros::NodeHandle[m[K’ has no member named ‘[01m[Kadvertse[m[K’; did you mean ‘[01m[Kadvertise[m[K’?
+  432 |  vis_pub = nh.[01;31m[Kadvertse[m[K<visualization_msgs::Marker>(OUTPUT_TOPIC_VIS,5);
+      |               [01;31m[K^~~~~~~~[m[K
+      |               [32m[Kadvertise[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:432:50:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  432 |  vis_pub = nh.advertse<visualization_msgs::Marker[01;31m[K>[m[K(OUTPUT_TOPIC_VIS,5);
+      |                                                  [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1618: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

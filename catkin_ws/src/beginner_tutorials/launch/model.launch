@@ -1,0 +1,25 @@
+<launch>
+  <!--Add Gazebo model path-->
+  <env name="GAZEBO_MODEL_PATH" value="$(find beginner_tutorials/models"/>
+
+
+  <!--Add Gazebo variables-->
+  <arg name="paused" default="false"/>
+  <arg name="headless" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="extra_gazebo_args" default="--verbose"/>
+
+  <!--Insert gazebo variables-->
+  <include file="$(find px4)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find beginner_tutorials)/world/model.world"/>
+    <arg name="debug" value=$(arg debug)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="extra_gazebo_args" value="$(arg extra_gazebo args)"/>
+  </include>
+
+</launch>

@@ -1,0 +1,30 @@
+<?xml version = "1.0"?>
+
+<!-- ############################################################################ 
+     ##################### Path Control Module (PCM) - ARAV ##################### 
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez #################### 
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ######## 
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########  
+     ############################################################################ -->
+
+<launch>
+
+    <arg name = "robotName" default = "arav"/>
+    
+	<group ns = "$(arg robotName)">
+		
+		<node name = "PX4Controller" pkg = "beginner_tutorials" type = "offb_node_user_input" required="true"/>
+		
+	</group>
+			
+</launch>
+	
+<!-- ############################################################################ 
+     ##################### Path Control Module (PCM) - ARAV ##################### 
+     ############################################################################
+     #################### Author : Alberto Ceballos Gonzalez #################### 
+     ######## E-mail : alberto.ceballos-gonzalez@student.isae-supaero.fr ######## 
+     ######### (c) Copyright 2022. Alberto Ceballos. All Rights Reserved ########  
+     ############################################################################ -->
+     

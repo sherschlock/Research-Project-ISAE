@@ -1,0 +1,109 @@
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_lib/include/mrs_lib/batch_visualizer.h:10[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:13[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:1[m[K:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:[m[K In member function ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool> pathfinder::AstarPlanner::findPath(const point3d&, const point3d&, std::shared_ptr<octomap::OcTree>, double)[m[K’:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:165:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass octomap::OcTreeKey[m[K’ has no member named ‘[01m[Kx[m[K’
+  165 |   ROS_INFO_STREAM("[Astar]: Planning from: " << planning_start.[01;31m[Kx[m[K() << ", " << planning_start.y() << ", " << planning_start.z());
+      |                                                                [01;31m[K^[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:361:64:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER[m[K’
+  361 |     __rosconsole_print_stream_at_location_with_filter__ss__ << [01;36m[Kargs[m[K; \
+      |                                                                [01;36m[K^~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:409:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION[m[K’
+  409 |       [01;36m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION[m[K(args); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:582:43:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_STREAM_COND[m[K’
+  582 | #define ROS_LOG_STREAM(level, name, args) [01;36m[KROS_LOG_STREAM_COND[m[K(true, level, name, args)
+      |                                           [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:111:31:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_STREAM[m[K’
+  111 | #define ROS_INFO_STREAM(args) [01;36m[KROS_LOG_STREAM[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, args)
+      |                               [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:165:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO_STREAM[m[K’
+  165 |   [01;36m[KROS_INFO_STREAM[m[K("[Astar]: Planning from: " << planning_start.x() << ", " << planning_start.y() << ", " << planning_start.z());
+      |   [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:165:94:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass octomap::OcTreeKey[m[K’ has no member named ‘[01m[Ky[m[K’
+  165 |   ROS_INFO_STREAM("[Astar]: Planning from: " << planning_start.x() << ", " << planning_start.[01;31m[Ky[m[K() << ", " << planning_start.z());
+      |                                                                                              [01;31m[K^[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:361:64:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER[m[K’
+  361 |     __rosconsole_print_stream_at_location_with_filter__ss__ << [01;36m[Kargs[m[K; \
+      |                                                                [01;36m[K^~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:409:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION[m[K’
+  409 |       [01;36m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION[m[K(args); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:582:43:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_STREAM_COND[m[K’
+  582 | #define ROS_LOG_STREAM(level, name, args) [01;36m[KROS_LOG_STREAM_COND[m[K(true, level, name, args)
+      |                                           [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:111:31:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_STREAM[m[K’
+  111 | #define ROS_INFO_STREAM(args) [01;36m[KROS_LOG_STREAM[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, args)
+      |                               [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:165:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO_STREAM[m[K’
+  165 |   [01;36m[KROS_INFO_STREAM[m[K("[Astar]: Planning from: " << planning_start.x() << ", " << planning_start.y() << ", " << planning_start.z());
+      |   [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:165:124:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass octomap::OcTreeKey[m[K’ has no member named ‘[01m[Kz[m[K’
+  165 |   ROS_INFO_STREAM("[Astar]: Planning from: " << planning_start.x() << ", " << planning_start.y() << ", " << planning_start.[01;31m[Kz[m[K());
+      |                                                                                                                            [01;31m[K^[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:361:64:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER[m[K’
+  361 |     __rosconsole_print_stream_at_location_with_filter__ss__ << [01;36m[Kargs[m[K; \
+      |                                                                [01;36m[K^~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:409:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION[m[K’
+  409 |       [01;36m[KROSCONSOLE_PRINT_STREAM_AT_LOCATION[m[K(args); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:582:43:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_STREAM_COND[m[K’
+  582 | #define ROS_LOG_STREAM(level, name, args) [01;36m[KROS_LOG_STREAM_COND[m[K(true, level, name, args)
+      |                                           [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:111:31:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_STREAM[m[K’
+  111 | #define ROS_INFO_STREAM(args) [01;36m[KROS_LOG_STREAM[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, args)
+      |                               [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:165:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO_STREAM[m[K’
+  165 |   [01;36m[KROS_INFO_STREAM[m[K("[Astar]: Planning from: " << planning_start.x() << ", " << planning_start.y() << ", " << planning_start.z());
+      |   [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:172:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kstart[m[K’ was not declared in this scope; did you mean ‘[01m[Kros::start[m[K’?
+  172 |   first.key        = [01;31m[Kstart[m[K;
+      |                      [01;31m[K^~~~~[m[K
+      |                      [32m[Kros::start[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/node_handle.h:47[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_lib/include/mrs_lib/batch_visualizer.h:10[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:13[m[K,
+                 from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:1[m[K:
+[01m[K/opt/ros/noetic/include/ros/init.h:184:18:[m[K [01;36m[Knote: [m[K‘[01m[Kros::start[m[K’ declared here
+  184 | ROSCPP_DECL void [01;36m[Kstart[m[K();
+      |                  [01;36m[K^~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:176:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kopen_heap[m[K’ was not declared in this scope
+  176 |   [01;31m[Kopen_heap[m[K.push(first);
+      |   [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:177:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kopen[m[K’ was not declared in this scope; did you mean ‘[01m[Kpopen[m[K’?
+  177 |   [01;31m[Kopen[m[K.insert(first);
+      |   [01;31m[K^~~~[m[K
+      |   [32m[Kpopen[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:193:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosed[m[K’ was not declared in this scope; did you mean ‘[01m[Kclose[m[K’?
+  193 |     [01;31m[Kclosed[m[K.insert(current);
+      |     [01;31m[K^~~~~~[m[K
+      |     [32m[Kclose[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:204:100:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  204 |       auto path_keys = backtrackPathKeys(best_node == first ? best_node_greedy : best_node, first, [01;31m[Kparent_map[m[K);
+      |                                                                                                    [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:223:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  223 |       auto path_keys = backtrackPathKeys(current, first, [01;31m[Kparent_map[m[K);
+      |                                                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:234:64:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{<expression error>, original_goal}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool>[m[K’
+  234 |       return {prepareOutputPath(path_keys, tree), original_goal[01;31m[K}[m[K;
+      |                                                                [01;31m[K^[m[K
+      |                                                                [01;31m[K|[m[K
+      |                                                                [01;31m[K<brace-enclosed initializer list>[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:277:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  277 |         [01;31m[Kparent_map[m[K[n] = current;
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:286:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclosed[m[K’ was not declared in this scope; did you mean ‘[01m[Kclose[m[K’?
+  286 |   visualizeExpansions(open, [01;31m[Kclosed[m[K, tree);
+      |                             [01;31m[K^~~~~~[m[K
+      |                             [32m[Kclose[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:291:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  291 |     auto path_keys = backtrackPathKeys(best_node, first, [01;31m[Kparent_map[m[K);
+      |                                                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:300:65:[m[K [01;31m[Kerror: [m[K‘[01m[Kparent_map[m[K’ was not declared in this scope
+  300 |     auto path_keys = backtrackPathKeys(best_node_greedy, first, [01;31m[Kparent_map[m[K);
+      |                                                                 [01;31m[K^~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/MrsAstarPlanner.dir/build.make:76: CMakeFiles/MrsAstarPlanner.dir/src/astar_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2873: CMakeFiles/MrsAstarPlanner.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

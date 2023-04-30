@@ -1,0 +1,14 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:38:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   38 |   std::shared_ptr<mrs_lib::BatchVisualizer> [01;31m[Kbv[m[K
+      |                                             [01;31m[K^~[m[K
+      |                                               [32m[K;[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In member function ‘[01m[Kvoid MyPlanner::octomapCallback(const ConstPtr&)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:13:76:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgToMap[m[K’ is not a member of ‘[01m[Koctomap_msgs[m[K’
+   13 |     octomap::OcTree* octree = dynamic_cast<octomap::OcTree*>(octomap_msgs::[01;31m[KmsgToMap[m[K(*msg));
+      |                                                                            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:19:5:[m[K [01;31m[Kerror: [m[Kinvalid use of member function ‘[01m[Kpathfinder::AstarPlanner MyPlanner::astar_planner_(double, double, double, double, double, double, double, double, double, double, bool, std::shared_ptr<mrs_lib::BatchVisualizer>)[m[K’ (did you forget the ‘[01m[K()[m[K’ ?)
+   19 |     [01;31m[Kastar_planner_[m[K.findPath(start, goal, octree, waypoints);
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/Astar_caller.dir/build.make:76: CMakeFiles/Astar_caller.dir/code/Astar_caller.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2807: CMakeFiles/Astar_caller.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

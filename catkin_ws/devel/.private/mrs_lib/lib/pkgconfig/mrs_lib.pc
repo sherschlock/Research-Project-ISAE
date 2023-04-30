@@ -1,0 +1,8 @@
+prefix=/home/akash/catkin_ws/devel/.private/mrs_lib
+
+Name: mrs_lib
+Description: Description of mrs_lib
+Version: 1.0.4
+Cflags: -I/home/akash/catkin_ws/src/mrs_lib/include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -lMrsLibSafetyZone -lMrsLibProfiler -lMrsLibScopeTimer -lMrsLibIirFilter -lMrsLibNotchFilter -lMrsLibUtils -lMrsLibParamLoader -lMrsLibMedianFilter -lMrsLibOdomLKF -lMrsLibGeometry -lMrsLibBatchVisualizer -lMrsLibAttitudeConverter -lMrsLibTransformer -lMrsLibImagePublisher -lMrsLibTimer -lMrsLibTransformBroadcaster -lMrsLibMath -lMrsLibDynamicPublisher
+Requires: roscpp sensor_msgs std_msgs geometry_msgs pcl_ros mrs_msgs

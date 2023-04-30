@@ -1,0 +1,13 @@
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:81:48:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool> pathfinder::AstarPlanner::findPath(const point3d&, const point3d&, octomap::OcTree*, double)[m[K’
+   81 | std::pair<std::vector<octomap::point3d>, bool> [01;31m[KAstarPlanner[m[K::findPath(const octomap::point3d &start_coord, const octomap::point3d &goal_coord,
+      |                                                [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:1[m[K:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:75:50:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool> pathfinder::AstarPlanner::findPath(const point3d&, const point3d&, std::shared_ptr<octomap::OcTree>, double)[m[K’
+   75 |   std::pair<std::vector<octomap::point3d>, bool> [01;36m[KfindPath[m[K(const octomap::point3d &start, const octomap::point3d &goal,
+      |                                                  [01;36m[K^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:52:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass pathfinder::AstarPlanner[m[K’ defined here
+   52 | class [01;36m[KAstarPlanner[m[K {
+      |       [01;36m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/MrsAstarPlanner.dir/build.make:76: CMakeFiles/MrsAstarPlanner.dir/src/astar_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2873: CMakeFiles/MrsAstarPlanner.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

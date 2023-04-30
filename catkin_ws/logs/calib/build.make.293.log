@@ -1,0 +1,3 @@
+[  0%] Built target calib_xacro_generated_to_devel_space_
+[ 50%] [32m[1mLinking CXX executable /home/akash/catkin_ws/src/Alberto_and_Joan/calib/code/cameraCalibration[0m
+[100%] Built target cameraCalibration

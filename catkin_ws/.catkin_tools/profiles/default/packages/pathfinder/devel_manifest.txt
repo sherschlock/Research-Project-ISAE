@@ -1,0 +1,7 @@
+mrs_octomap_planner
+/home/akash/catkin_ws/devel/.private/pathfinder/cmake.lock /home/akash/catkin_ws/devel/./cmake.lock
+/home/akash/catkin_ws/devel/.private/pathfinder/share/pathfinder/cmake/pathfinderConfig.cmake /home/akash/catkin_ws/devel/share/pathfinder/cmake/pathfinderConfig.cmake
+/home/akash/catkin_ws/devel/.private/pathfinder/share/pathfinder/cmake/pathfinderConfig-version.cmake /home/akash/catkin_ws/devel/share/pathfinder/cmake/pathfinderConfig-version.cmake
+/home/akash/catkin_ws/devel/.private/pathfinder/lib/libPathfinder.so /home/akash/catkin_ws/devel/lib/libPathfinder.so
+/home/akash/catkin_ws/devel/.private/pathfinder/lib/libMrsAstarPlanner.so /home/akash/catkin_ws/devel/lib/libMrsAstarPlanner.so
+/home/akash/catkin_ws/devel/.private/pathfinder/lib/pkgconfig/pathfinder.pc /home/akash/catkin_ws/devel/lib/pkgconfig/pathfinder.pc

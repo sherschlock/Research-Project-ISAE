@@ -1,0 +1,16 @@
+(cl:in-package mrs_msgs-msg)
+(cl:export '(ACTIVE-VAL
+          ACTIVE
+          CALLBACKS_ENABLED-VAL
+          CALLBACKS_ENABLED
+          HAVE_GOAL-VAL
+          HAVE_GOAL
+          TRACKING_TRAJECTORY-VAL
+          TRACKING_TRAJECTORY
+          TRAJECTORY_LENGTH-VAL
+          TRAJECTORY_LENGTH
+          TRAJECTORY_IDX-VAL
+          TRAJECTORY_IDX
+          TRAJECTORY_REFERENCE-VAL
+          TRAJECTORY_REFERENCE
+))

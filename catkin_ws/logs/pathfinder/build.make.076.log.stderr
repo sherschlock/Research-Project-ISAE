@@ -1,0 +1,7 @@
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:[m[K In member function ‘[01m[Kstd::pair<std::vector<octomath::Vector3>, bool> pathfinder::AstarPlanner::findPath(const point3d&, const point3d&, std::shared_ptr<octomap::OcTree>, double)[m[K’:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/src/astar_planner.cpp:100:29:[m[K [01;31m[Kerror: [m[Kinvalid initialization of reference of type ‘[01m[Koctomap::OcTree&[m[K’ from expression of type ‘[01m[Kstd::shared_ptr<octomap::OcTree>[m[K’
+  100 |   octomap::OcTree &tree   = [01;31m[Kmapping_tree[m[K;
+      |                             [01;31m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/MrsAstarPlanner.dir/build.make:76: CMakeFiles/MrsAstarPlanner.dir/src/astar_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2873: CMakeFiles/MrsAstarPlanner.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

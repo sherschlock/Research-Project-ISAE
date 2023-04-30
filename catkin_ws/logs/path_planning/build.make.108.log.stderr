@@ -1,0 +1,11 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In constructor ‘[01m[KEnergyObjective::EnergyObjective(const SpaceInformationPtr&, const ompl::base::State*)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:114:4:[m[K [01;31m[Kerror: [m[K‘[01m[KDistanceToGoalFactor[m[K’ was not declared in this scope
+  114 |    [01;31m[KDistanceToGoalFactor[m[K = 1;
+      |    [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:[m[K In member function ‘[01m[Kvirtual ompl::base::Cost EnergyObjective::stateCost(const ompl::base::State*) const[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/path_planning_node.cpp:120:49:[m[K [01;31m[Kerror: [m[K‘[01m[KDistanceToGoalFactor[m[K’ was not declared in this scope
+  120 |    double cost = si_->distance(s, goalState_) * [01;31m[KDistanceToGoalFactor[m[K;
+      |                                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/path_planning_node.dir/build.make:76: CMakeFiles/path_planning_node.dir/code/path_planning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1618: CMakeFiles/path_planning_node.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

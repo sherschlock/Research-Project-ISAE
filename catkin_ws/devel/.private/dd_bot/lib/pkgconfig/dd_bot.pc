@@ -1,0 +1,8 @@
+prefix=/home/akash/catkin_ws/devel/.private/dd_bot
+
+Name: dd_bot
+Description: Description of dd_bot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

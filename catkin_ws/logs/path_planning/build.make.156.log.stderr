@@ -1,0 +1,25 @@
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In constructor ‘[01m[KMyPlanner::MyPlanner()[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:7:14:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kpathfinder::AstarPlanner::AstarPlanner()[m[K’
+    7 |   MyPlanner()[01;31m[K{[m[K // : nh_("~"), astar_planner_(nh_) {
+      |              [01;31m[K^[m[K
+In file included from [01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:3[m[K:
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:55:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kpathfinder::AstarPlanner::AstarPlanner(double, double, double, double, double, double, double, double, double, double, bool, std::shared_ptr<mrs_lib::BatchVisualizer>)[m[K’
+   55 |   [01;36m[KAstarPlanner[m[K(double safe_obstacle_distance, double euclidean_distance_cutoff, double submap_distance, double planning_tree_resolution,
+      |   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:55:3:[m[K [01;36m[Knote: [m[K  candidate expects 12 arguments, 0 provided
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:52:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kpathfinder::AstarPlanner::AstarPlanner(const pathfinder::AstarPlanner&)[m[K’
+   52 | class [01;36m[KAstarPlanner[m[K {
+      |       [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:52:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:52:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kpathfinder::AstarPlanner::AstarPlanner(pathfinder::AstarPlanner&&)[m[K’
+[01m[K/home/akash/catkin_ws/src/mrs_octomap_planner/include/pathfinder/astar_planner.hpp:52:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:[m[K In member function ‘[01m[Kvoid MyPlanner::octomapCallback(const ConstPtr&)[m[K’:
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:13:76:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgToMap[m[K’ is not a member of ‘[01m[Koctomap_msgs[m[K’
+   13 |     octomap::OcTree* octree = dynamic_cast<octomap::OcTree*>(octomap_msgs::[01;31m[KmsgToMap[m[K(*msg));
+      |                                                                            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/akash/catkin_ws/src/Alberto_and_Joan/path_planning/code/Astar_caller.cpp:19:5:[m[K [01;31m[Kerror: [m[K‘[01m[KfindPath[m[K’ was not declared in this scope
+   19 |     [01;31m[KfindPath[m[K(start, goal, octree, waypoints);
+      |     [01;31m[K^~~~~~~~[m[K
+make[2]: *** [CMakeFiles/Astar_caller.dir/build.make:76: CMakeFiles/Astar_caller.dir/code/Astar_caller.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2807: CMakeFiles/Astar_caller.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

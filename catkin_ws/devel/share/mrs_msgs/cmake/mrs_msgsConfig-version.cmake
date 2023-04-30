@@ -1,0 +1,1 @@
+/home/akash/catkin_ws/devel/.private/mrs_msgs/share/mrs_msgs/cmake/mrs_msgsConfig-version.cmake
